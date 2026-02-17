@@ -9,7 +9,6 @@ from langchain_groq import ChatGroq
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
 
-
 load_dotenv()
 
 def build_rag_chain():
@@ -36,13 +35,10 @@ def build_rag_chain():
 
     # 4️⃣ Groq LLM
     llm = ChatGroq(
-        groq_api_key=st.secrets["GROQ_API_KEY"],
+        groq_api_key=st.secrets.get("GROQ_API_KEY"),
         model_name="llama3-8b-8192",
         temperature=0
     )
-
-
-    
 
     # 6️⃣ Prompt
     prompt = ChatPromptTemplate.from_template("""
@@ -65,14 +61,14 @@ Answer:
     # 7️⃣ Format Docs
     def format_docs(docs):
         return "\n\n".join(
-            f"[Article {doc.metadata.get('article_raw_number','')}] {doc.page_content}"
+            f"[Article {doc.metadata.get('article_number','')}] {doc.page_content}"
             for doc in docs
         )
 
-    # 8️⃣ Chain
+    # 8️⃣ Chain — use the base retriever (NOT MultiQueryRetriever)
     rag_chain = (
         {
-            "context": multi_retriever | format_docs,
+            "context": retriever | format_docs,
             "question": RunnablePassthrough()
         }
         | prompt
