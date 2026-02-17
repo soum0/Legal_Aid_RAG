@@ -5,9 +5,9 @@ langchain-core==0.1.52
 langchain-community==0.0.38
 langchain-groq==0.1.4
 
-chromadb==0.4.25
+chromadb==1.5.0
 sentence-transformers==5.2.2
 
 python-dotenv==1.2.1
 requests>=2.32.0
-numpy>=1.24,<2.0
+numpy>=1.24,<3.0
