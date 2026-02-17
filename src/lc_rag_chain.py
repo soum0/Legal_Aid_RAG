@@ -28,15 +28,15 @@ def build_rag_chain():
     retriever = vectorstore.as_retriever(
         search_type="mmr",
         search_kwargs={
-            "k": 8,
-            "fetch_k": 24
+            "k": 4,
+            "fetch_k": 10
         }
     )
 
     # 4️⃣ Groq LLM
     llm = ChatGroq(
         groq_api_key=st.secrets.get("GROQ_API_KEY"),
-        model_name="llama3-8b-8192",
+        model_name="llama-3.1-8b-instant",
         temperature=0
     )
 
