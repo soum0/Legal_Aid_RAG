@@ -5,7 +5,8 @@ from dotenv import load_dotenv
 
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.chat_models import ChatOpenAI
+from langchain_groq import ChatGroq
+
 
 
 from langchain.retrievers.multi_query import MultiQueryRetriever
@@ -38,12 +39,12 @@ def build_rag_chain():
     )
 
     # 4️⃣ Groq LLM
-    llm = ChatOpenAI(
-        openai_api_key=os.environ.get("GROQ_API_KEY"),
-        openai_api_base="https://api.groq.com/openai/v1",
-        model_name="llama-3.3-70b-versatile",
+    llm = ChatGroq(
+        groq_api_key=os.environ.get("GROQ_API_KEY"),
+        model_name="mixtral-8x7b-32768",
         temperature=0
     )
+
 
     # 5️⃣ MultiQuery Retriever
     multi_retriever = MultiQueryRetriever.from_llm(
