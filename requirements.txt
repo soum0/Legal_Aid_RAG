@@ -1,0 +1,17 @@
+# requirements.txt   (recommended name & format)
+
+langgraph
+langchain
+fastapi
+uvicorn
+streamlit
+pydantic
+langchain-groq     # ← this was wrong in your list
+python-dotenv      # ← "dotenv" is not the package name
+typing-extensions  # ← "typing" is built-in, you usually want this instead
+
+langchain-pymupdf4llm
+pymupdf4llm
+
+tqdm
+pyyaml

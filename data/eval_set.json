@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What does Article 14 state?",
+    "relevant_articles": ["14"]
+  },
+  {
+    "question": "What is the Right to Freedom under the Constitution?",
+    "relevant_articles": ["19", "20", "21", "22"]
+  },
+  {
+    "question": "What is Article 21 about?",
+    "relevant_articles": ["21"]
+  },
+  {
+    "question": "What powers does Parliament have to amend the Constitution?",
+    "relevant_articles": ["368"]
+  },
+  {
+    "question": "What are the fundamental rights guaranteed to citizens?",
+    "relevant_articles": ["14", "19", "21", "25", "29", "32"]
+  },
+  {
+    "question": "What does Article 32 provide?",
+    "relevant_articles": ["32"]
+  },
+  {
+    "question": "What are Directive Principles of State Policy?",
+    "relevant_articles": ["36", "37", "38", "39"]
+  },
+  {
+    "question": "What are the Fundamental Duties of citizens?",
+    "relevant_articles": ["51A"]
+  },
+  {
+    "question": "How is the President of India elected?",
+    "relevant_articles": ["54", "55"]
+  },
+  {
+    "question": "What is the procedure for declaring a national emergency?",
+    "relevant_articles": ["352"]
+  },
+  {
+    "question": "What is Article 370 about?",
+    "relevant_articles": ["370"]
+  },
+  {
+    "question": "What is Article 356 related to?",
+    "relevant_articles": ["356"]
+  },
+  {
+    "question": "What does Article 19 guarantee?",
+    "relevant_articles": ["19"]
+  },
+  {
+    "question": "What is the role of the Supreme Court under Article 32?",
+    "relevant_articles": ["32"]
+  },
+  {
+    "question": "What does Article 368 say about constitutional amendments?",
+    "relevant_articles": ["368"]
+  },
+  {
+    "question": "What rights are protected under Articles 29 and 30?",
+    "relevant_articles": ["29", "30"]
+  },
+  {
+    "question": "What is the meaning of equality before law?",
+    "relevant_articles": ["14"]
+  },
+  {
+    "question": "What protections are provided against exploitation?",
+    "relevant_articles": ["23", "24"]
+  },
+  {
+    "question": "What is the constitutional remedy if fundamental rights are violated?",
+    "relevant_articles": ["32"]
+  },
+  {
+    "question": "What are the freedoms guaranteed under Article 19?",
+    "relevant_articles": ["19"]
+  }
+]
