@@ -1,30 +1,24 @@
-# Production Dependencies for Constitution RAG System
-# Pinned versions for compatibility
-
-# Core LangChain Stack (compatible versions)
-langchain==0.1.13
-langchain-core==0.1.33
-langchain-community==0.0.39
-langchain-groq==0.1.4
-langchain_experimental==0.0.55
-
-# Vector Database
-chromadb==0.4.24
-
-# Embeddings (includes transformers)
-sentence-transformers==2.2.2
-
-# Web Framework
+# Core UI
 streamlit==1.28.1
 
-# Utilities
-python-dotenv==1.0.0
-pydantic==2.5.0
-tqdm==4.66.1
-pyyaml==6.0
+# LangChain (working compatible versions)
+langchain==0.1.20
+langchain-community==0.0.38
+langchain-core==0.1.52
 
-# Additional dependencies to ensure everything installs
-numpy==1.24.3
-scipy==1.11.4
-scikit-learn==1.3.2
-requests==2.31.0
+# Vector DB
+chromadb==1.5.0
+
+# Embeddings
+sentence-transformers==5.2.2
+
+# LLM provider (Groq via OpenAI-compatible client)
+openai==2.21.0
+
+# Environment management
+python-dotenv==1.0.1
+
+# Core dependencies (explicitly pinned for Streamlit Cloud stability)
+pydantic==2.6.4
+numpy>=1.24.0,<2.0.0
+requests>=2.31.0
