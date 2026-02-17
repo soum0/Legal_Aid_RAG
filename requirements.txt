@@ -1,17 +1,31 @@
-# requirements.txt   (recommended name & format)
+# Production Dependencies for Constitution RAG System
 
-langgraph
-langchain
-fastapi
-uvicorn
-streamlit
-pydantic
-langchain-groq     # ← this was wrong in your list
-python-dotenv      # ← "dotenv" is not the package name
-typing-extensions  # ← "typing" is built-in, you usually want this instead
+# Core LangChain Stack
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.1.0
+langchain-groq>=0.1.0
+langchain_experimental>=0.0.1
 
-langchain-pymupdf4llm
-pymupdf4llm
+# Vector Database
+chromadb>=0.4.0
 
-tqdm
-pyyaml
+# Embeddings
+sentence-transformers>=2.2.0
+
+# PDF Processing
+langchain-pymupdf4llm>=0.2.0
+pymupdf4llm>=0.1.0
+
+# Web Framework
+streamlit>=1.28.0
+fastapi>=0.104.0
+uvicorn>=0.24.0
+
+# Utilities
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+typing-extensions>=4.8.0
+tqdm>=4.66.0
+pyyaml>=6.0
+requests>=2.31.0
