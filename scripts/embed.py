@@ -1,7 +1,7 @@
 # scripts/embed.py
 
 import json
-from langchain.schema import Document
+from langchain_core.documents import Document
 from src.vector_store import VectorStore
 
 

@@ -5,11 +5,11 @@ from dotenv import load_dotenv
 
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.chat_models import ChatOpenAI
+from langchain_groq import ChatGroq
 
-from langchain.retrievers.multi_query import MultiQueryRetriever
-from langchain.prompts import ChatPromptTemplate
-from langchain.schema.runnable import RunnablePassthrough
+from langchain_experimental.retrievers import MultiQueryRetriever
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnablePassthrough
 
 
 load_dotenv()
@@ -37,11 +37,10 @@ def build_rag_chain():
     )
 
     # 4️⃣ Groq LLM
-    llm = ChatOpenAI(
-    openai_api_key=os.environ.get("GROQ_API_KEY"),
-    openai_api_base="https://api.groq.com/openai/v1",
-    model_name="llama-3.3-70b-versatile",
-    temperature=0
+    llm = ChatGroq(
+        groq_api_key=os.environ.get("GROQ_API_KEY"),
+        model_name="llama-3.3-70b-versatile",
+        temperature=0
     )
 
     # 5️⃣ MultiQuery Retriever
@@ -115,9 +114,8 @@ def build_retriever_only():
         }
     )
 
-    llm = ChatOpenAI(
-        openai_api_key=os.environ.get("GROQ_API_KEY"),
-        openai_api_base="https://api.groq.com/openai/v1",
+    llm = ChatGroq(
+        groq_api_key=os.environ.get("GROQ_API_KEY"),
         model_name="llama-3.3-70b-versatile",
         temperature=0
     )
