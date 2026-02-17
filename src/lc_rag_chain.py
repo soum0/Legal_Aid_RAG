@@ -2,14 +2,10 @@
 
 import os
 from dotenv import load_dotenv
-
+import streamlit as st
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
-
-
-
-from langchain.retrievers.multi_query import MultiQueryRetriever
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
 
@@ -40,17 +36,13 @@ def build_rag_chain():
 
     # 4️⃣ Groq LLM
     llm = ChatGroq(
-        groq_api_key=os.environ.get("GROQ_API_KEY"),
-        model_name="mixtral-8x7b-32768",
+        groq_api_key=st.secrets["GROQ_API_KEY"],
+        model_name="llama3-8b-8192",
         temperature=0
     )
 
 
-    # 5️⃣ MultiQuery Retriever
-    multi_retriever = MultiQueryRetriever.from_llm(
-        retriever=retriever,
-        llm=llm
-    )
+    
 
     # 6️⃣ Prompt
     prompt = ChatPromptTemplate.from_template("""
